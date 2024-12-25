@@ -4,14 +4,78 @@ import random
 # Define English and Arabic word lists
 word_lists = {
     "English": {
-        "Grade1": ["adventure", "hill", "shirt", "black", "house", "stem"],
-        "Grade2": ["africa", "curiosity", "mirror", "after", "dresser", "palestine"],
-        "Grade3": ["apartment", "illuminate", "numbers", "backpack", "invent", "nutmeg"],
-        "Grade4": ["ambiguous", "giraffe", "percentage", "antarctic", "glamorous", "phenomenal"],
-        "Grade5": ["abdicate", "eccentricity", "perpendicular", "accommodate", "evaporate"],
-        "Grade6": ["administration", "ephemeral", "mischievous", "advanced", "esoteric"],
-        "Grade7": ["accompany", "enlisted", "perspicacity", "affirmation", "euphoria"],
-        "Grade8": ["adage", "detrimental", "onomatopoeia", "affirmation", "dexterity"],
+        "Grade1": [
+    "adventure", "black", "brown", "butterfly", "carpet", "cereal", 
+    "elephant", "flower", "game", "grapes", "green", "happy", 
+    "hill", "house", "king", "lad", "leaves", "love", "orange", 
+    "pants", "paper", "purple", "rain", "rainbow", "shirt", 
+    "stem", "sunflower", "sweater", "three", "wear", "week", 
+    "white", "yard", "yellow", "yelp"],
+        "Grade2": [
+  "africa", "after", "amharic", "arabic", "bangladesh", "bathroom",
+  "bird", "blanket", "bookcase", "books", "canada", "carpet",
+  "ceiling", "click", "curiosity", "dresser", "eight", "english",
+  "ethiopia", "europe", "familiar", "find", "flower", "gratitude",
+  "hindi", "laugh", "mean", "mirror", "palestine", "playground",
+  "precious", "radiant", "rectangle", "school", "spanish", "square",
+  "symphony", "temperature", "urdu", "write"
+],
+        "Grade3": [
+  "apartment", "backpack", "bicycle", "boxcar", "butterfly", "camera", "chalkboard", "complex", "daring", 
+  "delicate", "division", "dreamers", "encyclopedia", "favorite", "guitar", "illuminate", "invent", "jellyfish", 
+  "kitchen", "language", "latch", "lessons", "letters", "library", "loaf", "meaning", "microscope", "monkey", 
+  "multiplication", "mysterious", "numbers", "nutmeg", "octopus", "peculiar", "perseverance", "plaster", "poached", 
+  "pumpkin", "rabbit", "school", "telescope", "umbrella", "violin", "waterfall", "xylophone"
+],
+        "Grade4": [
+  "ambiguous", "antarctic", "calendar", "centipede", "conscientious", "counsel", "coupon", "crackle", "custard", 
+  "darkness", "demonstrate", "devastate", "dinosaur", "dither", "essential", "exchange", "exquisite", "giraffe", 
+  "glamorous", "graduate", "guess", "handwriting", "hardship", "helicopter", "highlight", "igloo", "ingenious", 
+  "jaguar", "kangaroo", "medication", "nightmare", "norsemen", "opportunity", "ostrich", "percentage", "phenomenal", 
+  "presentation", "question", "recent", "refrigerator", "rough", "sincere", "spreadsheet", "stampede", "suitable", 
+  "swordsmen", "vikings", "windshield", "wishful", "wristwatch"
+]
+,
+        "Grade5": [
+  "abdicate", "accommodate", "advanced", "ambiguous", "amusing", "barrage", "belligerent", "berserk", "bizarre", 
+  "bureaucracy", "cabbage", "complementary", "confiscate", "construction", "continuous", "creatures", "dehydrated", 
+  "derogatory", "eccentricity", "evaporate", "evermore", "extensive", "formidable", "gigantic", "gregarious", 
+  "hypnotize", "incognito", "intersect", "intuition", "knelt", "leopard", "meticulous", "nauseate", "nostalgic", 
+  "optimistic", "oscillate", "perpendicular", "predominant", "quagmire", "qualitative", "solution", "solvent", 
+  "spectators", "squeeze", "translucent", "tuneful", "ubiquitous", "unwavering", "vanish", "versatile", "violet", 
+  "voice", "whimsical"
+]
+,
+        "Grade6": [
+  "administration", "advanced", "alabaster", "altitude", "amiable", "amusing", "anthem", "banishment", "barricade", 
+  "boisterous", "commemorate", "compliant", "conclusion", "conference", "conserve", "discomfort", "disengage", 
+  "disseminate", "entrepreneurship", "ephemeral", "esoteric", "exterior", "facetious", "faucet", "garrulous", 
+  "hexagonal", "hypothesis", "improvise", "inscrutable", "intrepid", "jubilation", "kaleidoscope", "kneel", 
+  "leadership", "lecture", "leeway", "luminance", "mischievous", "negotiation", "partisan", "phenomenon", "primers", 
+  "procession", "pronounce", "recognition", "reimburse", "relics", "resemble", "salvation", "scrimmage", "simulation", 
+  "spectators", "strident", "subdivision", "vagabond"
+],
+        "Grade7": [
+  "accompany", "affirmation", "alabaster", "altitude", "brigadier", "bulletin", "cherished", "collaboration", 
+  "colonel", "commendable", "commissioned", "composure", "conquering", "consecutive", "contagious", "correctional", 
+  "defensiveness", "disposition", "disseminate", "enlisted", "euphoria", "fluctuate", "germinate", "inexorable", 
+  "infraction", "jettison", "lascivious", "lieutenant", "mellifluous", "metamorphosis", "miniature", "miracle", 
+  "narration", "paramedic", "pennant", "percussion", "perfidious", "perish", "perspicacity", "pharaoh", "qualm", 
+  "quantum", "recognition", "resourceful", "sausage", "scenery", "scrimmage", "siesta", "sophomore", "stagnant", 
+  "superfluous", "sycophant", "travesty", "undeniable", "vegetation", "veracity", "vocational"
+]
+,
+        "Grade8": [
+  "adage", "affirmation", "airman", "amethyst", "amphitheater", "annexation", "appendectomy", "azalea", 
+  "boisterously", "cacophony", "chandeliers", "cherished", "churlish", "cinnabar", "collaborate", "commendable", 
+  "concierge", "connoisseur", "controversy", "defensiveness", "detrimental", "dexterity", "discordant", "discredit", 
+  "discrepancy", "disparate", "emaciated", "ephemeral", "excerpt", "extravaganza", "handkerchief", "indelible", 
+  "indigenous", "jubilee", "laggard", "masquerade", "merengue", "nauseous", "numbness", "ominous", "onomatopoeia", 
+  "perfidious", "piedmont", "plaudits", "preclude", "pronunciation", "pulmonary", "quaint", "quixotic", "redundancy", 
+  "remorse", "servile", "sobriety", "sphinx", "tumultuous", "ubiquity", "unfathomable", "venerate", "winchester", 
+  "worcestershire"
+]
+,
     },
     "Arabic": {
         "Grade1": ["مغامرة", "تل", "قميص", "أسود", "بيت", "جذع"],
