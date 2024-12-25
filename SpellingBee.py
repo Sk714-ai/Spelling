@@ -77,9 +77,13 @@ if st.button("Assign Words for Current Round"):
 
 # Display round history
 st.subheader("Round History")
+# Ensure the selected grade exists in round_history before accessing it
 if selected_grade in st.session_state["round_history"][language]:
     for round_number, words in st.session_state["round_history"][language][selected_grade].items():
         st.markdown(f"**Round {round_number}:** {', '.join(words)}")
+else:
+    st.write(f"No history available for {selected_grade} in {language}.")
+
 
 # Progress to the next round
 if st.button("Next Round"):
